@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stick Hero Background Demo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: sans-serif;
+      transition: background 1s ease;
+    }
+
+    body.menu-active {
+      background: linear-gradient(to right, #1d2b64, #f8cdda);
+      background-size: cover;
+      background-position: center;
+    }
+
+    body.game-active {
+      background: #fef1e1;
+    }
+
+    #startButton, #restartButton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    #restartButton {
+      display: none;
+    }
+  </style>
+</head>
+<body class="menu-active">
+  <button id="startButton">Mulai Game</button>
+  <button id="restartButton">Kembali ke Menu</button>
+
+  <script>
+    const body = document.body;
+    const startButton = document.getElementById("startButton");
+    const restartButton = document.getElementById("restartButton");
+
+    startButton.addEventListener("click", () => {
+      body.classList.remove("menu-active");
+      body.classList.add("game-active");
+      startButton.style.display = "none";
+      restartButton.style.display = "block";
+    });
+
+    restartButton.addEventListener("click", () => {
+      body.classList.remove("game-active");
+      body.classList.add("menu-active");
+      startButton.style.display = "block";
+      restartButton.style.display = "none";
+    });
+  </script>
+</body>
+</html>

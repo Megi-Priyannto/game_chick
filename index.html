@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stik Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="menu-active">
+
+  <div class="container">
+    <button id="startButton">MULAI</button>
+    <div id="score"></div>
+    <canvas id="game" width="375" height="375"></canvas>
+    <div id="introduction">Hold down the mouse to stretch out a stick</div>
+    <div id="perfect">DOUBLE SCORE</div>
+    <button id="restart">RESTART</button>
+  </div>
+
+  <div class="cloud"></div>
+  <div class="cloud" style="top: 180px; animation-delay: 3s; animation-duration: 18s;"></div>
+  <div class="cloud" style="top: 180px; animation-delay: 3s; animation-duration: 30s;"></div>
+
+  <div class="sun"></div>
+  <!-- 2 pohon di kiri -->
+  <div class="tree tree-left" style="left: 80px;"></div>
+  <div class="tree tree-left" style="left: 200px;"></div>
+  
+  <!-- 1 pohon di kanan -->
+  <div class="tree tree-right" style="right: 100px;"></div>
+
+  <audio id="fallSound" src="sounds/gagal.mp3"></audio>
+  <audio id="bgMusic" src="sounds/audio.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

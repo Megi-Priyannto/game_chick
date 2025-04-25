@@ -1,0 +1,193 @@
+html,
+body {
+  background-image: url('asset/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#score {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 2em;
+  font-weight: 900;
+}
+
+#introduction {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  font-weight: 600;
+  font-size: 0.8em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  transition: opacity 2s;
+}
+
+#startButton {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  padding: 15px 30px;
+  font-weight: 700;
+  font-size: 1.2em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+#restart {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  border-radius: 50%;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: none;
+  cursor: pointer;
+}
+
+#perfect {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+/* Langit sebagai latar belakang */
+.cloud {
+  position: absolute;
+  top: 100px;
+  left: -200px;
+  width: 200px;
+  height: 60px;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.85;
+  animation: moveCloud 15s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  top: -25px;
+  left: 20px;
+}
+
+.cloud::after {
+  top: -35px;
+  left: 100px;
+}
+
+@keyframes moveCloud {
+  0% { left: -250px; }
+  100% { left: 100vw; }
+}
+
+/* Matahari */
+.sun {
+  position: absolute;
+  top: 50px;
+  right: 80px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #FFD700, #FFA500);
+  border-radius: 50%;
+  box-shadow: 0 0 50px #FFD700;
+  animation: pulseSun 2s infinite ease-in-out;
+  z-index: 0;
+}
+
+/* Efek bersinar */
+@keyframes pulseSun {
+  0%, 100% {
+    box-shadow: 0 0 30px #FFD700;
+  }
+  50% {
+    box-shadow: 0 0 80px #FFD700;
+  }
+}
+
+/* Pohon */
+.tree {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 140px;
+  background-color: #8B4513; /* batang coklat */
+  border-radius: 8px;
+  z-index: 2;
+}
+
+/* Daun besar lebat (3 lapis) */
+.tree::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 80px;
+  background: radial-gradient(circle, #2E8B57 40%, #006400 100%);
+  border-radius: 80% 80% 60% 60%;
+  box-shadow:
+    0 -20px 0 #2E8B57,
+    -40px -10px 0 #228B22,
+    40px -10px 0 #228B22,
+    0 -40px 0 #2E8B57;
+  z-index: -1;
+}
+
+/* Ranting / cabang */
+.tree::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: -10px;
+  width: 20px;
+  height: 4px;
+  background: #5C3317;
+  border-radius: 2px;
+  transform: rotate(-30deg);
+  box-shadow: 
+    40px -10px 0 #5C3317,
+    30px 20px 0 #5C3317;
+}
+
+/* Kanan dan kiri disesuaikan */
+.tree-right {
+  right: 0;
+}
+
+.tree-left {
+  left: 0;
+}
